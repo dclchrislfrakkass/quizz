@@ -1,0 +1,61 @@
+html {
+    margin: 0;
+    padding: 0;
+    
+}
+header {
+    color: white;
+    background-color: #F57C00;
+}
+body {
+    color: white;
+}
+.top {
+    padding-left:2%;
+    min-height: 30%;
+    background-color: #FF9800;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.resultats {
+    padding-left: 3%;
+}
+.navbar.navbar-8 .navbar-toggler-icon {
+    background-image: url('https://mdbootstrap.com/img/svg/hamburger4.svg?color=1729B0');
+}
+.genres {
+    min-height : 40%;
+    color: #F57C00;
+    background-color: white;
+
+}
+.container {
+    margin-top: 8%;
+    margin-bottom: 5%;
+
+}
+.genre {
+    border: 0.5px solid #F57C00;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%; 
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
+}
+h1 {
+    color: white;
+}
+footer {
+    background-color: #F57C00;
+    color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
