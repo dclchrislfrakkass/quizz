@@ -1,5 +1,12 @@
 
+<?php
+
+include '_navbar.php';
+?>
+</header>
 <body>
+
+
    
 <h2>Inscription</h2>
    
@@ -67,3 +74,4 @@ if (isset($_POST['submit']))
 
 ?>
 
+<?php include '_footer.php' ?>
