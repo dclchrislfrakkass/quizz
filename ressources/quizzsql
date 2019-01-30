@@ -1,0 +1,61 @@
+DROP TABLE IF EXISTS statut_quizz ;
+CREATE TABLE statut_quizz (idStatut_statut_quizz INT(9) AUTO_INCREMENT NOT NULL,
+nom_statut_quizz VARCHAR(255),
+PRIMARY KEY (idStatut_statut_quizz)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS Questionnaire ;
+CREATE TABLE Questionnaire (idQuizz_Questionnaire INT(9) AUTO_INCREMENT NOT NULL,
+titreQuizz_Questionnaire VARCHAR(255),
+datecreation_Questionnaire DATE,
+dateModification_Questionnaire DATE,
+idStatut_statut_quizz INT(9),
+id INT(9),
+id_membre INT(9),
+PRIMARY KEY (idQuizz_Questionnaire)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS categorie ;
+CREATE TABLE categorie (id INT(9) AUTO_INCREMENT NOT NULL,
+Nom_categorie VARCHAR(255),
+PRIMARY KEY (id)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS question ;
+CREATE TABLE question (id_question INT(9) AUTO_INCREMENT NOT NULL,
+libelle_question VARCHAR(255),
+choix_question VARCHAR(255),
+idQuizz_Questionnaire INT(9),
+PRIMARY KEY (id_question)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS membre ;
+CREATE TABLE membre (id_membre INT(9) AUTO_INCREMENT NOT NULL,
+pseudo_membre VARCHAR(255),
+email_membre VARCHAR(255),
+motDePasse_membre VARCHAR(255),
+dateInscription_membre DATE,
+id_statut_membre INT(9),
+PRIMARY KEY (id_membre)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS statut_membre ;
+CREATE TABLE statut_membre (id_statut_membre INT(9) AUTO_INCREMENT NOT NULL,
+nom_statut_membre VARCHAR(255),
+PRIMARY KEY (id_statut_membre)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS note ;
+CREATE TABLE note (id_note INT(9) AUTO_INCREMENT NOT NULL,
+valeur_note INT(1),
+PRIMARY KEY (id_note)) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS recoit ;
+CREATE TABLE recoit (idQuizz_Questionnaire INT(9) AUTO_INCREMENT NOT NULL,
+id_note INT(9) NOT NULL,
+compteur_recoit INT(9),
+PRIMARY KEY (idQuizz_Questionnaire,
+ id_note)) ENGINE=InnoDB;
+
+ALTER TABLE Questionnaire ADD CONSTRAINT FK_Questionnaire_idStatut_statut_quizz FOREIGN KEY (idStatut_statut_quizz) REFERENCES statut_quizz (idStatut_statut_quizz);
+
+ALTER TABLE Questionnaire ADD CONSTRAINT FK_Questionnaire_id FOREIGN KEY (id) REFERENCES categorie (id);
+ALTER TABLE Questionnaire ADD CONSTRAINT FK_Questionnaire_id_membre FOREIGN KEY (id_membre) REFERENCES membre (id_membre);
+ALTER TABLE question ADD CONSTRAINT FK_question_idQuizz_Questionnaire FOREIGN KEY (idQuizz_Questionnaire) REFERENCES Questionnaire (idQuizz_Questionnaire);
+ALTER TABLE membre ADD CONSTRAINT FK_membre_id_statut_membre FOREIGN KEY (id_statut_membre) REFERENCES statut_membre (id_statut_membre);
+ALTER TABLE recoit ADD CONSTRAINT FK_recoit_idQuizz_Questionnaire FOREIGN KEY (idQuizz_Questionnaire) REFERENCES Questionnaire (idQuizz_Questionnaire);
+ALTER TABLE recoit ADD CONSTRAINT FK_recoit_id_note FOREIGN KEY (id_note) REFERENCES note (id_note);

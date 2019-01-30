@@ -8,9 +8,9 @@ header {
     background-color: #F57C00;
 }
 body {
-    color: white;
 }
 .top {
+    color: white;
     padding-left:2%;
     min-height: 30%;
     background-color: #FF9800;
@@ -21,21 +21,26 @@ body {
 }
 .navbar.navbar-8 .navbar-toggler-icon {
     background-image: url('https://mdbootstrap.com/img/svg/hamburger4.svg?color=1729B0');
+
+}
+.navbar-toggler{
+
+    border: white;
 }
 .genres {
-    min-height : 40%;
+    min-height : 35%;
     color: #F57C00;
     background-color: white;
 
 }
-.container {
-    margin-top: 8%;
-    margin-bottom: 5%;
+/* .container {
+    margin-top: 1%;
+    margin-bottom: 3%;
 
-}
+} */
 .genre {
     border: 0.5px solid #F57C00;
-    padding-top: 4%;
+    padding-top: 6%;
     padding-bottom: 4%;
     margin-top: 2%;
     margin-left: 2%;
