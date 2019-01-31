@@ -6,6 +6,7 @@ include '_navbar.php';
 </header>
 <body>
 
+<div class="text-center">
 <?php
 if (isset($_SESSION['pseudo']))
 {
@@ -61,8 +62,10 @@ else
         // session_start();
         // $_SESSION['id'] = $resultat['pseudo_membre'];
         $statut = $resultat['nom_statut_membre'];
+        $idM = $resultat['id_membre'];
         $_SESSION['pseudo'] = $pseudo;
         $_SESSION['statut'] = $statut;
+        $_SESSION['id_membre'] = $idM;
         echo 'Bonjour ' . $_SESSION['pseudo'];
         // var_dump($resultat);
         echo '<br>';
@@ -80,6 +83,6 @@ else
 }
 
 
-
 ?>
+</div>
 <?php include '_footer.php' ?>

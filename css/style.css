@@ -4,11 +4,10 @@ html {
     
 }
 header {
-    color: white;
+    /* color: white; */
     background-color: #F57C00;
 }
-body {
-}
+
 .top {
     color: white;
     padding-left:2%;
@@ -54,7 +53,10 @@ body {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
 }
 h1 {
-    color: white;
+    /* color: white; */
+}
+label {
+    color: #F57C00;
 }
 footer {
     background-color: #F57C00;

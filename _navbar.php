@@ -75,7 +75,7 @@ session_start();
             echo '<li class="nav-item">
                 <a class="nav-link" href="logout.php">Se déconnecter</a>
             </li>';} ?>
-            <li class="nav-item">
+            
                 <a class="nav-link" href="#">Contact</a>
             </li>
 

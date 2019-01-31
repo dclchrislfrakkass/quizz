@@ -6,6 +6,7 @@ include '_navbar.php';
 </header>
 <body>
 
+<div class="text-center">
 
    
 <h2>Inscription</h2>
@@ -73,5 +74,5 @@ if (isset($_POST['submit']))
 }
 
 ?>
-
+</div>
 <?php include '_footer.php' ?>

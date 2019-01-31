@@ -7,16 +7,27 @@
 
 </header>
 <body>
+<div class="text-center">
 <div class="top">
 
 <?php if (isset($_SESSION['pseudo']))
     {   ?>
     <h1><?php echo $_SESSION['statut'];?></h1>
     <h2><?php echo $_SESSION['pseudo'];
-    } ?></h2>
+    } ?>
+    <button class="btn btn-primary"><i class="far fa-plus-square"></i> Quizz</button>
+ 
+    <script>
+    $(document).ready(function(){
+    $("button").click(function(){
+        $("#qq").load("create.php");
+    });
+    });
+    </script>
+</h2>
 
 </div>
-
+<div id="qq">
 <?php 
 
 //vérifie que ce soit un admin de connecté 
@@ -84,12 +95,16 @@ En ligne: <?php echo $iStateOk['COUNT(*)']; ?> <br>
 En attente: <?php echo $iState['COUNT(*)']; ?> <br>
 <ul>
 <?php while ($qWa = $iQuizz->fetch()){ ?>
-<li><strong><?= $qWa['titreQuizz_Questionnaire']?> </strong> date : <?= $qWa['datecreation_Questionnaire']?> par : <?= $qWa['pseudo_membre']?><button>v</button><button>s</button></li><?php } ?>
+<li><strong><?= $qWa['titreQuizz_Questionnaire']?> </strong> date : <?= $qWa['datecreation_Questionnaire']?> par : <?= $qWa['pseudo_membre']?>+ - </li><?php } ?>
 
 </ul>
-
+<?php echo $m['id_membre'];?>
+</div>
+</div>
 <?php } 
 ?>
+
+
 <?php include '_footer.php' ?>
 
 </body>
