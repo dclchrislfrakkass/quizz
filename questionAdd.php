@@ -49,7 +49,7 @@ $repQ = 1;
 echo '<em><strong>Votre Quizz '. $titre.' comporte '. $nbQuestions .' questions</em></strong>';
 echo '<br>';
 echo '<br>';
-?><form name="formulaireDynamique"><?php
+?><form name="formulaireDynamique" action="next.php"><?php
 // echo 'combien de réponses à la question '.$compteurQuestion.' ?';
 // echo '<input type="number">';
 echo '<div class="md-form input-group mb-3">
@@ -91,9 +91,38 @@ echo '<div class="form-group">
 </div>
 </div>';
 
+// echo '<div class="form-group">
+// <label class="col-md-4 control-label" for="Réponse X">Réponse '.$repQ.'</label>
+// <div class="col-md-4">
+// <div class="input-group">
+// <input id="Réponse X" name="Réponse X" class="form-control" type="text" placeholder="cochez si la réponse est la bonne">
+// <span class="input-group-addon">     
+// <input type="checkbox">     
+// </span>'. $repQ ++. '
 
-?><input type="button" id="add" class="btn btn-warning"  onclick=""; value=" + de réponses ? "/>
-<input type="button" class="btn btn-warning"  onclick=""; value=" Question suivante "/>
+// </div>
+
+// </div>
+// </div>';
+
+// echo '<div class="form-group">
+// <label class="col-md-4 control-label" for="Réponse X">Réponse '.$repQ.'</label>
+// <div class="col-md-4">
+// <div class="input-group">
+// <input id="Réponse X" name="Réponse X" class="form-control" type="text" placeholder="cochez si la réponse est la bonne">
+// <span class="input-group-addon">     
+// <input type="checkbox">     
+// </span>'. $repQ ++. '
+
+// </div>
+
+// </div>
+// </div>';
+// ?>
+<div class="input_fields_wrap">
+
+<!-- <input type="button" id="add" class="btn btn-warning" value=" + de réponses ? "/> -->
+<button type="submit" class="btn btn-warning" value=" Question suivante "/>
 
 
 
@@ -108,7 +137,7 @@ echo '<div class="form-group">
 </body>
 
 </html>
-
+<!-- 
 <script>
 document.querySelector('#add').addEventListener('click', function(event) {
    
@@ -116,4 +145,4 @@ var first = document.querySelector('.form-group');
 first.parentNode.appendChild(first.cloneNode(true));
       
 });
-</script>
+</script> -->
